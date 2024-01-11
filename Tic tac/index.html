@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap" rel="stylesheet">
     <link href="/Tic-Tac-Toe-Game.png" rel="icon" type="image/x-icon">
-    <meta name="description" content="This is a Tic-Tac-Toe game developed by Subhojeet Das. You can play vs AI bot or multiplayer as per your convinience.">
+    <meta name="description"
+        content="This is a Tic-Tac-Toe game developed by Subhojeet Das. You can play vs AI bot or multiplayer as per your convinience.">
     <link rel="stylesheet" href="style.css">
     <title>Tic-Tac-Toe | GameZone</title>
 </head>
+
 <body>
     <main class="background">
         <section class="container">
@@ -21,10 +24,25 @@
             <div class="tile" id="d">Play Mode:</div>
             <div class="tile" id="e"><a href="Single/single.html">Single</a></div>
             <div class="tile" id="f"><a href="Multiplayer/multiplayer.html">Multiplayer</a></div>
-            <div class="tile" id="g"><a href="#">Other Games</a></div>
-            <div class="tile" id="h"><a href="#">Source Code</a></div>
-            <div class="tile" id="i"><a href="mailto:hbksubhojeetdas1107@gmail.com">Contact Me</a></div>
+            <div class="tile" id="g"><a href="#"></a></div>
+            <div class="tile" id="h"><a href="../index.html"><img
+                        src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back" height="30px">Back</a>
+            </div>
+            <div class="tile" id="i">
+                <p>&copy; a <span style="color: rgb(148, 37, 37);">red</span><span
+                        style="color: rgb(5, 106, 5);">hulk</span><span style="color: #fff">.in</span> product.</p>
+            </div>
         </section>
     </main>
+    <script>
+        // Function to block the right-click context menu
+        function blockContextMenu(event) {
+            event.preventDefault();
+        }
+
+        // Attach the blockContextMenu function to the contextmenu event
+        window.addEventListener("contextmenu", blockContextMenu);
+    </script>
 </body>
+
 </html>

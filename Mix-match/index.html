@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link href="/mix-match.png" rel="icon" type="image/x-icon">
-    <meta name="description" content="This is a memory game developed by Subhojeet Das. Play and enjoy. Cheers!">
-    <script src="game.js" async></script>
-    <title>Flip Flop Fun | GameZone</title>
-</head>
-<body>
-    <h1 class="page-title">Flip Flop Fun</h1>
 
-    <div class="overlay-text visible">
-        Click to Start the game
-    </div>
-    <div id="game-over-text" class="overlay-text">
-        TIME OVER!!
-        <span class="overlay-text-small">Click to Restart</span>
-    </div>
-    <div id="victory-text" class="overlay-text">
-        YOU WON!!
-        <span class="overlay-text-small">Click to Restart</span>
-    </div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="/mix-match.png" rel="icon" type="image/x-icon">
+  <meta name="description" content="This is a memory game developed by Subhojeet Das. Play and enjoy. Cheers!">
+  <script src="game.js" async></script>
+  <title>Flip Flop Fun | GameZone</title>
+</head>
+
+<body>
+  <footer style="text-align: center; color: transparent; background-color: transparent;">
+    <a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff;"><img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back"
+        height="30px"> Back</a>
+
+ <button onclick="resetFunction()" style="background-color: transparent; color: white; border: none; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">🔄 Reset</button>
+      </footer>
+      <script>
+        function resetFunction() {
+            // Add your reset logic here
+            location.reload();
+        }
+    </script>
+  <h1 class="page-title">Flip Flop Fun</h1>
+
+  <div class="overlay-text visible">
+    Click to Start the game
+  </div>
+  <div id="game-over-text" class="overlay-text">
+    TIME OVER!!
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
+  <div id="victory-text" class="overlay-text">
+    YOU WON!!
+    <span class="overlay-text-small">Click to Restart</span>
+  </div>
 
   <div class="game-container">
     <div class="game-info-container">
@@ -291,5 +305,20 @@
       </div>
     </div>
   </div>
+  <script>
+    // Function to block the right-click context menu
+    function blockContextMenu(event) {
+      event.preventDefault();
+    }
+
+    // Attach the blockContextMenu function to the contextmenu event
+    window.addEventListener("contextmenu", blockContextMenu);
+  </script>
+   <footer>
+    <p class="copyright-notice">&copy; a <a href="#" style="text-decoration: none;"> <span
+          style="color: rgb(255, 0, 0);">red</span><span style="color: rgb(1, 255, 1);">hulk</span><span
+          style="color: #fff">.in</span></a> product.</p></a>
+  </footer>
 </body>
+
 </html>

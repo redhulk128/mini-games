@@ -1,51 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./style.css" />
-    <title>Rock paper and scissors</title>
-  </head>
-  <body>
 
-    <section class="game">
-      <div class="mode">
-        <button id="for-light" onclick="Black()"><img src="https://cdn-icons-png.flaticon.com/512/5915/5915417.png"
-                height="40px"></button>
-        <button id="for-dark" onclick="White()"><img src="https://cdn-icons-png.flaticon.com/512/7291/7291162.png"
-                height="40px"></button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>Rock paper and scissors</title>
+</head>
+
+<body style="overflow: hidden;">
+  <footer style="text-align: center; color: transparent; background-color: #091921;">
+    <a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff;"><img
+        src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back" height="30px"> Back</a>
+  </footer>
+  <br>
+  <section class="game">
+    <div class="mode">
+      <button id="for-light" onclick="Black()"><img src="https://cdn-icons-png.flaticon.com/512/5915/5915417.png"
+          height="40px"></button>
+      <button id="for-dark" onclick="White()"><img src="https://cdn-icons-png.flaticon.com/512/7291/7291162.png"
+          height="40px"></button>
     </div>
-      <div class="score">
-        <div class="player-score">
-          <h2>Player</h2>
-          <p>0</p>
-        </div>
-        <div class="computer-score">
-          <h2>Computer</h2>
-          <p>0</p>
-        </div>
+    <div class="score">
+      <div class="player-score">
+        <h2>Player</h2>
+        <p>0</p>
       </div>
-
-      <div class="intro">
-        <h1>Rock Paper and Scissors</h1>
-        <button>Let's Play</button>
+      <div class="computer-score">
+        <h2>Computer</h2>
+        <p>0</p>
       </div>
+    </div>
 
-      <div class="match fadeOut">
-        <h2 class="winner">Choose an option</h2>
-        <div class="hands">
-          <img class="player-hand" src="./assets/rock.png" alt="" />
-          <img class="computer-hand" src="./assets/rock.png" alt="" />
-        </div>
-        <div class="options">
-          <button class="rock">rock</button>
-          <button class="paper">paper</button>
-          <button class="scissors">scissors</button>
-        </div>
+    <div class="intro">
+      <h1>Rock Paper and Scissors</h1>
+      <button>Let's Play</button>
+    </div>
+
+    <div class="match fadeOut">
+      <h2 class="winner">Choose an option</h2>
+      <div class="hands">
+        <img class="player-hand" src="./assets/rock.png" alt="" />
+        <img class="computer-hand" src="./assets/rock.png" alt="" />
       </div>
-    </section>
+      <div class="options">
+        <button class="rock">rock</button>
+        <button class="paper">paper</button>
+        <button class="scissors">scissors</button>
+      </div>
+    </div>
+  </section>
 
-    <script src="app.js"></script>
-  </body>
+  <script src="app.js"></script>
+  <script>
+    // Function to block the right-click context menu
+    function blockContextMenu(event) {
+      event.preventDefault();
+    }
+
+    // Attach the blockContextMenu function to the contextmenu event
+    window.addEventListener("contextmenu", blockContextMenu);
+  </script>
+</body>
+
 </html>

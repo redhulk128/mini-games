@@ -24,6 +24,11 @@
 </head>
 
 <body>
+  <footer style="text-align: center; color: transparent; background-color: #091921;">
+    <a title="Home" href="../../index.html" style="text-decoration: none; color: #ffffff;"><img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back"
+        height="30px"> Back</a>
+  </footer>
+  <br>
   <div class="mode">
     <button id="for-light" onclick="Black()"><img src="https://cdn-icons-png.flaticon.com/512/5915/5915417.png"
             height="40px"></button>
@@ -53,6 +58,14 @@
   </div>
 
   <script  src="js/index.js"></script>
+  <script>
+    // Function to block the right-click context menu
+    function blockContextMenu(event) {
+         event.preventDefault();
+    }
 
+    // Attach the blockContextMenu function to the contextmenu event
+    window.addEventListener("contextmenu", blockContextMenu);
+</script>
 </body>
 </html>

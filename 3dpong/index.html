@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <title>Pong Game - 3D Pong</title>
+     <meta name="keywords" content="Pong, Game" />
+     <meta name="description"
+          content="Play the game of pong in 3D, an interesting implementation of this classic game" />
+     <link rel="canonical" href="https://www.ponggame.org/3d-pong" />
+     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+     <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+     <link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+     <link rel="icon" type="image/png" sizes="192x192" href="android-icon-192x192.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+     <meta name="msapplication-TileColor" content="#ffffff">
+     <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
+     <meta name="theme-color" content="#ffffff">
+     <style>
+          a.link1:link {
+               color: blue;
+               font-weight: bold;
+               text-decoration: none;
+          }
+
+          a.link1:visited {
+               color: blue;
+               font-weight: bold;
+               text-decoration: none;
+          }
+
+          a.link1:hover {
+               color: green;
+          }
+
+          a.link2:link {
+               color: black;
+               font-weight: bold;
+               text-decoration: none;
+          }
+
+          a.link2:visited {
+               color: black;
+               font-weight: bold;
+               text-decoration: none;
+          }
+
+          a.link2:hover {
+               color: green;
+          }
+
+          .widediv {
+               width: 100%;
+          }
+
+          @media only screen and (max-width: 1020px) {
+               .respAd {
+                    width: 100%;
+                    height: 100px;
+                    text-align: center;
+               }
+
+               .adSep {
+                    display: none;
+               }
+
+               .adTopPad60 {
+                    padding-top: 0px;
+                    width: 100%;
+                    min-height: 90px;
+               }
+
+               .adTopPad100 {
+                    padding-top: 0px;
+                    width: 100%;
+                    min-height: 90px;
+               }
+
+               .adTopPad125 {
+                    padding-top: 0px;
+                    width: 100%;
+                    min-height: 90px;
+               }
+
+               .adTopPad140 {
+                    padding-top: 0px;
+                    width: 100%;
+                    min-height: 90px;
+               }
+
+               .wrapper {
+                    display: block;
+               }
+
+               h1 {
+                    display: inline;
+                    color: black;
+                    font-size: 22px;
+               }
+
+               body {
+                    margin: 0px;
+                    font-family: sans-serif;
+                    font-style: normal;
+                    font-size: 16px;
+                    background-color: white;
+                    color: black;
+               }
+
+               .maintab {
+                    text-align: center;
+               }
+
+               .logoimg {
+                    max-width: 90%;
+                    border: 0px;
+                    padding: 4px;
+               }
+
+               .hovermenu {
+                    text-align: center;
+                    width: 90%;
+                    margin-left: 5px;
+                    margin-right: 5px;
+                    line-height: 27px;
+                    padding-top: 18px;
+               }
+
+               .hovermenu ul {
+                    display: inline;
+                    padding-inline-start: 0px;
+               }
+
+               .hovermenu ul li {
+                    list-style: none;
+                    display: inline;
+               }
+
+               .hovermenu ul li a:link {
+                    color: black;
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 18px;
+               }
+
+               .hovermenu ul li a:visited {
+                    color: black;
+                    font-weight: bold;
+                    text-decoration: none;
+                    font-size: 18px;
+               }
+
+               .hovermenu ul li a:hover {
+                    color: blue;
+                    font-size: 18px;
+               }
+
+               .menubottomsep {
+                    display: block
+               }
+
+               .leftdiv {
+                    text-align: center;
+                    width: 100%
+               }
+
+               .rightdiv {
+                    width: 100%;
+                    min-height: 136px;
+               }
+
+               .footerIndexText {
+                    text-align: center;
+                    clear: both;
+                    line-height: 28px;
+               }
+
+               #gameArea {
+                    margin-left: auto;
+                    margin-right: auto;
+                    max-width: 100%;
+               }
+          }
+
+          @media only screen and (min-width: 1020px) {
+               .respAd {
+                    width: 160px;
+                    height: 600px
+               }
+
+               .adSep {
+                    width: 146px;
+               }
+
+               .adTopPad60 {
+                    padding-top: 60px;
+               }
+
+               .adTopPad100 {
+                    padding-top: 100px;
+               }
+
+               .adTopPad125 {
+                    padding-top: 125px;
+               }
+
+               .adTopPad140 {
+                    padding-top: 140px;
+               }
+
+               .textpage {
+                    padding: 10px;
+               }
+
+               .wrapper {
+                    display: block
+               }
+
+               h1 {
+                    display: inline;
+                    color: black;
+                    font-size: 20px;
+               }
+
+               body {
+                    margin: 0px;
+                    font-family: sans-serif;
+                    font-style: normal;
+                    font-size: 13px;
+                    background-image: url(art/background.jpg);
+                    background-color: white;
+                    color: black;
+               }
+
+               .maintab {
+                    text-align: center;
+                    width: 1000px;
+                    margin: auto;
+                    border-style: solid;
+                    border-color: gray;
+                    border-top-width: 0px;
+                    border-bottom-width: 2px;
+                    border-right-width: 2px;
+                    border-left-width: 2px;
+                    background-color: white;
+                    color: #222222;
+                    font-weight: bold;
+                    font-size: 14px;
+               }
+
+               .logoimg {
+                    margin: 0px 0px;
+                    padding: 0px;
+                    padding: 2px;
+                    border: 0px
+               }
+
+               .menusep {
+                    display: none;
+               }
+
+               .hovermenu {
+                    width: 100%;
+                    height: 25px;
+                    background-color: #737373;
+                    margin-left: 2px;
+                    margin-right: 2px;
+                    padding-top: 2px;
+               }
+
+               .hovermenu ul {
+                    font: bold 13px arial;
+                    padding-left: 0;
+                    margin-left: 0;
+                    display: inline;
+               }
+
+               .hovermenu ul li {
+                    list-style: none;
+                    display: inline;
+               }
+
+               .hovermenu ul li a {
+                    padding: 4px 0.5em;
+                    text-decoration: none;
+                    float: left;
+                    color: white;
+                    border-right: 1px solid gray;
+               }
+
+               .hovermenu ul li a:hover {
+                    background-color: white;
+                    color: black;
+               }
+
+               .menubottomsep {
+                    display: none;
+               }
+
+               .leftdiv {
+                    width: 694px;
+                    padding: 4px;
+                    float: left;
+               }
+
+               .rightdiv {
+                    width: 276px;
+                    float: right;
+                    height: 700px;
+               }
+
+               .footerIndexText {
+                    text-align: center;
+                    clear: both
+               }
+          }
+     </style>
+     <script type="text/javascript" charset="UTF-8"
+          src="//ca-eu.cookie-script.com/s/09975fc1a3efdc4797a92c9fc72c53ce.js"></script>
+
+     <!-- Global site tag (gtag.js) - Google Analytics -->
+     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7972678-10"></script>
+     <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag() { dataLayer.push(arguments); }
+          gtag('js', new Date());
+
+          gtag('config', 'UA-7972678-10');
+     </script>
+</head>
+
+<body>
+     <noscript>
+          In order to play pong game, please turn on javascript in your browser, you can usually do it from your browser
+          Tools menu, under the options or configuration submenu.
+     </noscript>
+     <div class="maintab">
+          <div class="menubottomsep">
+               <hr />
+          </div>
+          <br />
+          <div class="widediv">
+               <h1>3D Pong</h1>
+               <p>This version of pong reminds squash a bit, the two paddles are in a cubical room,<br />
+                    except for that, the rules are exactly the same as the classic pong game, you should hit the ball
+                    with your paddle and move it to the opponent's ground, you will lose a point once you missed a ball.
+                    Move the paddle with the mouse.<br />
+               </p>
+               <iframe
+                    src="https://html5.gamedistribution.com/3c17b3d6370c46be9c7319bdcea64759/?gd_sdk_referrer_url=https://www.ponggame.org/3d-pong"
+                    width="850" height="600" scrolling="none" frameborder="0" style="max-width:100%"
+                    title="Curve Ball"></iframe>
+               <br /><br /><br /><br />
+          </div>
+          <div style="text-align:center;clear:both">
+               <hr />
+               <footer style="text-align: center; color: transparent; background-color: #091921;">
+                    <a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff;"><img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back"
+                        height="30px"> Back</a>
+                  </footer>
+               <a class="link2" href="https://www.ponggame.org">Pong Game</a>&nbsp;&nbsp;Copyright &copy; 2011-2023
+               PongGame.org. All rights reserved.<br />Before using this site, please read the terms of use (available
+               on the bottom of the homepage).
+          </div>
+          <br />
+     </div>
+     <br /><br /><br />
+     <script>
+          // Function to block the right-click context menu
+          function blockContextMenu(event) {
+               event.preventDefault();
+          }
+
+          // Attach the blockContextMenu function to the contextmenu event
+          window.addEventListener("contextmenu", blockContextMenu);
+     </script>
+     
+</body>
+
+</html>

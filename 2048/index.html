@@ -1,28 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="This is a 2048 game developed by Subhojeet Das. Play and enjoy. Cheers!">
-    <title>2048 | GameZone</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="2048.js"></script>
+  <meta charset="UTF-8">
+  <title>2048</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="./style.css">
+
 </head>
 <body>
-    <h1>2048</h1>
-    <hr>
-    <h2>Score: <span id="score">0</span></h2>
-    <div id="board">
+<!-- partial:index.partial.html -->
+<header>
+  <div class="container">
+    <h1><span>2</span><span>0</span><span>4</span><span>8</span>
+    </h1>
+    <p class="inspired">&copy; a redhulk.in product.</p>
+  </div>
+</header>
+<div class="container">
+  <div class="directions">
+    <p><strong>HOW TO PLAY:</strong> Use your arrow keys to move the tiles. When two tiles slide into each other, they merge into one!</p>
+        <footer style="text-align: center; color: transparent; background-color: #091921;">
+        <a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff;"><img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back"
+            height="30px"> Back</a>
+      </footer>
+  </div>
+  <div class="scores">
+    <div class="score-container best-score">
+      best: 
+      <div class="score">
+        <div id="bestScore">0</div>
+      </div>
     </div>
-    <div id="arrows">
-            <img  id="upArrow" src="arrowIcon.png" width="30px" height="30px" style="transform:rotate(-90deg)">
-        <div>
-            <img id="leftArrow" src="arrowIcon.png" width="30px" height="30px" style="transform:rotate(180deg)">
-            <img id="rightArrow" src="arrowIcon.png" width="30px" height="30px">
-        </div>
-        <img id="downArrow" src="arrowIcon.png" width="30px" height="30px" style="transform:rotate(90deg)">
+    <div class="score-container">
+      score: 
+      <div class="score">
+        <div id="score">0</div>
+        <div class="add" id="add"></div>
+      </div>
+    </div>
+  </div>
+  <div class="game">
+    <div id="tile-container" class="tile-container"></div>
+    <div class="end" id="end">Game Over<div class="monkey">🙈</div><button class="btn not-recommended__item js-restart-btn" id="try-again">Try Again</button></div>
+  </div>
+  
+  <div class="not-recommended">
+    <button class="btn not-recommended__item js-restart-btn" id="restart">Restart Game</button>
+    <span class="not-recommended__annotation"></span>
+  </div>
+  
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js'></script><script  src="./script.js"></script>
+  <script>
+    // Function to block the right-click context menu
+    function blockContextMenu(event) {
+         event.preventDefault();
+    }
 
-    </div>
+    // Attach the blockContextMenu function to the contextmenu event
+    window.addEventListener("contextmenu", blockContextMenu);
+</script>
 </body>
 </html>

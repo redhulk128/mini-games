@@ -3,7 +3,7 @@
     <title>Color</title>
     <link href="style.css" type="text/css" rel="stylesheet" />
   </head>
-  <body>
+  <body style="overflow: hidden;">
     <div id="header">
       <div id="clr"></div>
     </div>
@@ -15,6 +15,15 @@
         ><span id="hard">Hard</span>
       </div>
     </nav>
+    <footer style="text-align: center; color: transparent; background-color: palegoldenrod;">
+      <a title="Home" href="../index.html" style="text-decoration: none; color: #000000;"><img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back"
+          height="30px"> Back</a>
+    </footer>
+    <footer>
+      <p class="copyright-notice">&copy; a <a href="#" style="text-decoration: none;"> <span
+            style="color: rgb(255, 0, 0);">red</span><span style="color: rgb(1, 255, 1);">hulk</span><span
+            style="color: #fff">.in</span></a> product.</p></a>
+    </footer>
     <div id="container">
       <div class="square"></div>
       <div class="square"></div>
@@ -27,5 +36,15 @@
       <div class="square"></div>
     </div>
     <script src="script.js"></script>
+    <script>
+      // Function to block the right-click context menu
+      function blockContextMenu(event) {
+           event.preventDefault();
+      }
+
+      // Attach the blockContextMenu function to the contextmenu event
+      window.addEventListener("contextmenu", blockContextMenu);
+ </script>
+ 
   </body>
 </html>

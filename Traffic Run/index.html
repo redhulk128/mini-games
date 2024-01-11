@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Traffic Run Game with Three.js</title>
+  <link rel="stylesheet" href="./style.css">
+  <style>
+    .navbar {
+      background-color: #333;
+      padding: 15px;
+      text-align: center;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 14px 16px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar" style="text-align: center; color: transparent; background-color: transparent;">
+		<a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff;"><b>🏠 Back To HomePage</b></a>
+	</div>
+<!-- partial:index.partial.html -->
+<div id="score">Press UP</div>
+
+<div id="controls">
+  <div id="buttons">
+    <button id="accelerate">
+      <svg width="30" height="30" viewBox="0 0 10 10">
+        <g transform="rotate(0, 5,5)">
+          <path d="M5,4 L7,6 L3,6 L5,4" />
+        </g>
+      </svg>
+    </button>
+    <button id="decelerate">
+      <svg width="30" height="30" viewBox="0 0 10 10">
+        <g transform="rotate(180, 5,5)">
+          <path d="M5,4 L7,6 L3,6 L5,4" />
+        </g>
+      </svg>
+    </button>
+  </div>
+  <div id="instructions">
+    Press UP to start. Avoid collision with other vehicles by accelerating
+    or decelerating with the UP and DOWN keys.
+  </div>
+</div>
+
+<div id="results">
+  <div class="content">
+    <h1>You hit another vehicle</h1>
+    <p>To reset the game press R</p>
+  </div>
+</div>
+
+<a id="youtube-main" class="youtube" target="_blank" href="https://youtu.be/JhgBwJn1bQw">
+  <span>Learn Three.js</span>
+</a>
+<div id="youtube-card">
+  Learn Three.js while building this game on YouTube
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/r126/three.min.js'></script><script  src="./script.js"></script>
+  <script>
+    // Function to block the right-click context menu
+    function blockContextMenu(event) {
+      event.preventDefault();
+    }
+  
+    // Attach the blockContextMenu function to the contextmenu event
+    window.addEventListener("contextmenu", blockContextMenu);
+  </script>
+</body>
+</html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,29 +11,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/blackjack/blackjack.css">
 </head>
+
 <body>
     <div id="wrapper">
         <div id="navWrapper">
-            
+
             <p id="coins">coins: </p>
             <p id="blackJack">BLACK JACK</p>
-            
-            
+
+
         </div>
-        
-        
+
+
         <div id="container">
             <div class='text' id="messageDiv">
                 <p id="message"></p>
-                
+
             </div>
-            
+
         </div>
         <div id="cards-wrapper">
-            
+
             <p class='text' id="points">Points: </p>
             <div class='cardsDiv' id="playerCards"></div>
-            
+
             <div id="buttonDiv">
                 <button class="btn" id="startBtn">Start Game</button>
                 <button class="btn" id="anotherCardBtn">Another Card</button>
@@ -42,12 +44,12 @@
             <p id="dealerCardsId">Dealer's cards:</p>
             <div class='cardsDiv' id="dealerCards"></div>
             <p class='text' id="dealerPoints">Points: </p>
-            
+
         </div>
-        
+
     </div>
     <div>
-        <audio id="cardWav" src="/blackjack/sounds/carddeal3.wav" ></audio>
+        <audio id="cardWav" src="/blackjack/sounds/carddeal3.wav"></audio>
         <audio id="coinsAudio" src="/blackjack/sounds/coins3.wav"></audio>
         <audio id="coinsAudio2" src="/blackjack/sounds/coins7big.wav"></audio>
         <audio id="coinsAudio3" src="/blackjack/sounds/coins2.wav"></audio>
@@ -58,15 +60,22 @@
         <audio id="blackJack" src="/blackjack/sounds/win2.wav"></audio>
         <audio id="btnSound" src="/blackjack/sounds/btnSound.wav"></audio>
     </div>
-    
-     
-    
-    
-    
-    
-    
-    
-    
+
+    <script>
+        // Function to block the right-click context menu
+        function blockContextMenu(event) {
+            event.preventDefault();
+        }
+
+        // Attach the blockContextMenu function to the contextmenu event
+        window.addEventListener("contextmenu", blockContextMenu);
+    </script>
+
+    <footer style="text-align: center; color: transparent; background-color: #038815;">
+        <a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff;"><img
+                src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back" height="30px"> Back</a>
+    </footer>
+
     <script src="/blackjack/blackjack.js"></script>
 </body>
 

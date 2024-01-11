@@ -17,11 +17,32 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <!-- app css -->
     <link rel="stylesheet" href="./app.css">
+    <style>
+        .navbar {
+           background-color: #333;
+           padding: 15px;
+           text-align: center;
+           position: fixed;
+           width: 100%;
+           top: 0;
+           z-index: 1000;
+       }
 
+       .navbar a {
+           color: white;
+           padding: 14px 16px;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 16px;
+       }
+   </style>
 </head>
 
 <body>
-
+	<div class="navbar" style="text-align: center; color: transparent; background-color: transparent;">
+        <a title="Home" href="../index.html" style="text-decoration: none; color: #f90000;"><img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back"
+            height="20px"> Back</a>
+		</div>
     <!-- top nav -->
     <nav>
         <div class="nav-container">
@@ -190,6 +211,20 @@
     <script src="./static/js/constant.js"></script>
     <script src="./static/js/sudoku.js"></script>
     <script src="./static/js/app.js"></script>
+    <script>
+        // Function to block the right-click context menu
+        function blockContextMenu(event) {
+             event.preventDefault();
+        }
+
+        // Attach the blockContextMenu function to the contextmenu event
+        window.addEventListener("contextmenu", blockContextMenu);
+   </script>
+   <footer>
+    <p class="copyright-notice">&copy; a <a href="#" style="text-decoration: none;"> <span
+          style="color: rgb(255, 0, 0);">red</span><span style="color: rgb(1, 255, 1);">hulk</span><span
+          style="color: lightskyblue">.in</span></a> product.</p></a>
+  </footer>
 </body>
 
 </html>

@@ -11,7 +11,21 @@
   	<link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body style="overflow: hidden;">
+	<footer style="text-align: center; color: transparent; background-color: #121212;">
+        <a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff; margin-left: 10px;">
+            <img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back" height="30px"> Back
+        </a>
+    </footer>
+	<script>
+		// Function to block the right-click context menu
+		function blockContextMenu(event) {
+			event.preventDefault();
+		}
+	
+		// Attach the blockContextMenu function to the contextmenu event
+		window.addEventListener("contextmenu", blockContextMenu);
+	</script>
 	<main class="background">
 	<section class="title">
 		<a class="heading">Tic Tac Toe</a>

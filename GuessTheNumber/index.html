@@ -34,9 +34,22 @@
                     <li>If you guess the number, you win</li>
                     <li>If you don't guess the number, you lose</li>
                 </ul>
+                <footer style="text-align: center; color: transparent; background-color: transparent;">
+                    <a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff;"><img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back"
+                        height="30px"> Back</a>
+                  </footer>
             </div>
         </div>
     </div>
     <script src="./script.js"></script>
+    <script>
+        // Function to block the right-click context menu
+        function blockContextMenu(event) {
+             event.preventDefault();
+        }
+
+        // Attach the blockContextMenu function to the contextmenu event
+        window.addEventListener("contextmenu", blockContextMenu);
+   </script>
 </body>
 </html>

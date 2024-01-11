@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Dice Game</title>
         <link rel="stylesheet" type="text/css" href="_style/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body style="overflow: hidden;">
+        <footer style="text-align: center; color: transparent; background-color: rgb(66, 75, 84);">
+            <a title="Home" href="../index.html" style="text-decoration: none; color: #ffffff;"><img src="https://i.postimg.cc/jSXMY9Wx/back-removebg-preview.png" alt="back"
+                height="15px"> Back</a>
+                <p class="copyright-notice" style="color: #fff;">&copy; a <a href="#" style="text-decoration: none;"> <span
+                    style="color: rgb(255, 0, 0);">red</span><span style="color: rgb(1, 255, 1);">hulk</span><span
+                    style="color: #fff">.in</span></a> product.</p></a>
+          </footer>
         <section id="wrapper">
             <section id="container">
                 <div class="player-0-panel"><div class="player-0-act"></div>
@@ -30,5 +38,14 @@
             </section>
         </section>
         <script src="_javascript/rules.js"></script>
+        <script>
+            // Function to block the right-click context menu
+            function blockContextMenu(event) {
+                 event.preventDefault();
+            }
+  
+            // Attach the blockContextMenu function to the contextmenu event
+            window.addEventListener("contextmenu", blockContextMenu);
+       </script>
     </body>
 </html>
